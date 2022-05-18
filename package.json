@@ -1,0 +1,31 @@
+{
+  "name": "algo-starter",
+  "version": "1.0.0",
+  "description": "Martin's Starter Kit to Study and Solve Algorithm Questions with JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll --noStackTrace"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinkruusement/algo-starter.git"
+  },
+  "author": "Martin Kruusement",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinkruusement/algo-starter/issues"
+  },
+  "homepage": "https://github.com/martinkruusement/algo-starter#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "yaml": "^2.0.1"
+  }
+}

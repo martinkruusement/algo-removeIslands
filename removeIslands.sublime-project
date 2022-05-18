@@ -1,0 +1,41 @@
+{
+	"folders":
+	[
+		{
+			"folder_exclude_patterns": ["node_modules"],
+			"binary_file_patterns":
+			[
+				"*.jpg",
+				"*.jpeg",
+				"*.png",
+				"*.gif",
+				"*.ttf",
+				"*.tga",
+				"*.dds",
+				"*.ico",
+				"*.eot",
+				"*.pdf",
+				"*.swf",
+				"*.jar",
+				"*.zip",
+				"node_modules/**",
+				"dist/**"
+			],
+			"path": ".",
+		}
+	],
+	"settings":
+	{
+		"LSP": {
+			"LSP-eslint": {
+				"enabled": true,
+				"selector": "source.projs | source.js | source.ts | source.jsx | source.tsx | source.js.jsx | source.js.react | source.ts.react | text.html.vue | text.html.basic",
+			},
+		},
+		"env": {
+			"Darwin": {
+				"PATH": "$PATH:~/.nvm/versions/node/v16.15.0/bin/node",
+			},
+		},
+	}
+}

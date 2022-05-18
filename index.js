@@ -10,7 +10,6 @@ function solution (_matrix) {
   let edges = {}
   for (let _y in matrix) {
     let y = parseInt(_y)
-    y
     let isHorizontalEdge = y === 0 || y === matrix.length - 1
     for (let _x in matrix[y]) {
       let x = parseInt(_x)
@@ -25,20 +24,20 @@ function solution (_matrix) {
   for (let key of Object.keys(edges)) {
     let { x, y } = fromKey(key)
     if (matrix[y][x] === 1) {
-      processGrid(fromKey(key), matrix)
+      exploreIsland(fromKey(key), matrix)
     }
   }
 
   return matrix
 }
 
-function processGrid ({ x, y }, matrix) {
+function exploreIsland ({ x, y }, matrix) {
   let moves = getPossibleMoves({ x, y }, matrix)
   for (let move of moves) {
     matrix[move.y][move.x] = 0
   }
   for (let move of moves) {
-    processGrid(move, matrix)
+    exploreIsland(move, matrix)
   }
 }
 
@@ -58,9 +57,11 @@ function validateGrid ({ x, y }, matrix) {
   if (x > matrix[0].length - 1) { valid = false }
   return valid
 }
+
 function toKey (x, y) {
   return `${x},${y}`
 }
+
 function fromKey (key) {
   let [x, y] = key.split(',').map(coord => parseInt(coord))
   return { x, y }

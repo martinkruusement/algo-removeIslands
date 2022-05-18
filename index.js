@@ -1,4 +1,5 @@
 const cases = require('./load-tests.js')
+/* eslint no-unused-expressions: "warn" */
 
 function solution (_matrix) {
   let matrix = [...JSON.parse(JSON.stringify(_matrix))]
@@ -9,13 +10,13 @@ function solution (_matrix) {
   let edges = {}
   for (let _y in matrix) {
     let y = parseInt(_y)
+    y
     let isHorizontalEdge = y === 0 || y === matrix.length - 1
     for (let _x in matrix[y]) {
       let x = parseInt(_x)
       let isVerticalEdge = x === 0 || x === matrix[y].length - 1
       let key = toKey(x, y)
       if ((isHorizontalEdge || isVerticalEdge) && matrix[y][x]) {
-        key
         edges[key] = true
       }
     }
@@ -32,10 +33,8 @@ function solution (_matrix) {
 }
 
 function processGrid ({ x, y }, matrix) {
-  matrix[y][x] = 0
   let moves = getPossibleMoves({ x, y }, matrix)
   for (let move of moves) {
-    console.log(move)
     matrix[move.y][move.x] = 0
   }
   for (let move of moves) {
@@ -67,15 +66,9 @@ function fromKey (key) {
   return { x, y }
 }
 
-// eslint-disable-next-line no-unused-expressions
-cases[0].in
-// eslint-disable-next-line no-unused-expressions
-JSON.stringify(solution(cases[0].in)) === JSON.stringify(cases[0].out)
-solution(cases[0].in[0])
-solution(cases[0].in[1])
-solution(cases[0].in[2])
-cases[0].out[0]
-cases[0].out[1]
-cases[0].out[2]
+/* eslint-disable no-unused-expressions */
+let result = solution(cases[0].in)
+cases[0].out
+JSON.stringify(result) === JSON.stringify(cases[0].out)
 
 module.exports = solution
